@@ -1,0 +1,8 @@
+[user]
+	email = sam@samcollier.tech
+	name = Sam Collier
+[color]
+	ui = auto
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
