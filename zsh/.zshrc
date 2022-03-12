@@ -380,10 +380,11 @@ neofetch
 # install lolcat
 #sfetch | lolcat
 alias src="cd /home/sam/src/"
-alias s="cd /home/sam/src"
+alias s="cd /home/sam/src && clear"
 alias vi=nvim
-alias c="cd /home/sam/src/learningSfml"
+alias c="cd /home/sam/src/cmp105_coursework-goopey7 && clear"
 alias cls="clear"
 alias t="cd /home/sam/src/learningTmxlite"
+alias :q="exit"
 export LD_LIBRARY_PATH=/home/sam/src/casablanca/build.release/Release/Binaries
 export PATH="/home/$USER/bin:$PATH"
