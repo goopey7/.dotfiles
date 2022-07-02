@@ -386,5 +386,7 @@ alias c="cd /home/sam/src/cmp105_coursework-goopey7 && clear"
 alias cls="clear"
 alias t="cd /home/sam/src/learningTmxlite"
 alias :q="exit"
+alias lg="lazygit"
+alias discord='discord --no-sandbox'
 export LD_LIBRARY_PATH=/home/sam/src/casablanca/build.release/Release/Binaries
 export PATH="/home/$USER/bin:$PATH"
