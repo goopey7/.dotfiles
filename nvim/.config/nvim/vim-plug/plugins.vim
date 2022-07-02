@@ -46,4 +46,14 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'vim-scripts/a.vim'
 	"LazyGit
 	Plug 'kdheepak/lazygit.nvim'
+	"JS Server
+	Plug 'neoclide/coc-tsserver'
+	Plug 'pangloss/vim-javascript'
+
+	Plug 'leafgarland/typescript-vim'
+	Plug 'peitalin/vim-jsx-typescript'
+	Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+	Plug 'jparise/vim-graphql'
+	Plug 'maxmellon/vim-jsx-pretty'
+	Plug 'dense-analysis/ale'
     call plug#end()

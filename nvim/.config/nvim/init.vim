@@ -1,4 +1,5 @@
 let mapleader = " "
+let g:ale_completion_enabled = 1
 source $HOME/.config/nvim/vim-plug/plugins.vim
 source $HOME/.config/nvim/vim-plug/coc.vim
 colorscheme jellybeans
@@ -41,6 +42,7 @@ nnoremap <leader>z :CMakeClose<CR>
 nnoremap <leader>d :GenDefinition<CR>
 nnoremap <leader>c :Class 
 nnoremap <leader>v :AV<CR>
+nnoremap <leader>t :set noexpandtab<CR>:retab!<CR>
 
     "C++ CLASS GENERATOR: OPENING 2 NEW FILES
 function! ClassNew(ClassName)
@@ -79,3 +81,11 @@ function! ClassNew(ClassName)
     endfunction
 
 command! -nargs=1 Class call ClassNew(<f-args>)
+
+au FileType javascript setlocal formatprg=prettier
+au FileType javascript.jsx setlocal formatprg=prettier
+au FileType typescript setlocal formatprg=prettier\ — parser\ typescript
+
+let b:ale_fixers = ['prettier', 'eslint']
+let b:ale_linters = {'javascript': ['eslint']}
+let g:ale_linters_explicit = 1
