@@ -56,4 +56,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'jparise/vim-graphql'
 	Plug 'maxmellon/vim-jsx-pretty'
 	Plug 'dense-analysis/ale'
+	Plug 'tpope/vim-dadbod'
+	Plug 'kristijanhusak/vim-dadbod-ui'
     call plug#end()

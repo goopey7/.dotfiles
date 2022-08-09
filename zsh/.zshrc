@@ -381,6 +381,7 @@ neofetch
 #sfetch | lolcat
 alias src="cd /home/sam/src/"
 alias s="cd /home/sam/src && clear"
+alias r="cd /home/sam/src/rainyday && clear"
 alias vi=nvim
 alias c="cd /home/sam/src/cmp105_coursework-goopey7 && clear"
 alias cls="clear"
@@ -388,5 +389,7 @@ alias t="cd /home/sam/src/learningTmxlite"
 alias :q="exit"
 alias lg="lazygit"
 alias discord='discord --no-sandbox'
+alias gateway="route -n | grep 'UG[ \t]' | awk '{print $2}'"
+alias gate=gateway
 export LD_LIBRARY_PATH=/home/sam/src/casablanca/build.release/Release/Binaries
 export PATH="/home/$USER/bin:$PATH"

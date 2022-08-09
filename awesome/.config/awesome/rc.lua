@@ -120,7 +120,7 @@ local browser2          = "firefox"
 local browser3          = "chromium -no-default-browser-check"
 local editor            = os.getenv("EDITOR") or "nano"
 local editorgui         = "discord"
-local filemanager       = "thunar"
+local filemanager       = "dolphin"
 local mailclient        = "brave"
 local mediaplayer       = "spotify"
 local terminal          = "alacritty"
@@ -1154,3 +1154,4 @@ awful.spawn.with_shell("picom -b --config  $HOME/.config/awesome/picom.conf")
 
 
 awful.screen.set_auto_dpi_enabled( true )
+

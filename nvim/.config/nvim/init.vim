@@ -54,12 +54,14 @@ function! ClassNew(ClassName)
 	:execute "normal! a#pragma once\<cr>\<cr>\<cr>"
     :execute "normal! a" . "class " . a:ClassName ."\<cr>{\<cr>"
     :execute "normal! a\<tab>public:\<cr>"
+    :execute "normal! a\<tab>\<tab>" . a:ClassName . "(const " . a:ClassName . "&) = delete;\<cr>"
+    :execute "normal! a\<tab>\<tab>" . a:ClassName . "& operator=(const " . a:ClassName . "&) = delete;\<cr>"
     :execute "normal! a\<tab>\<tab>" . a:ClassName . "();\<cr>"
-    :execute "normal! a\<tab>\<tab>~" . a:ClassName . "();\<cr>\<cr>"
-    :execute "normal! a\<tab>protected:\<cr>\<cr>"
-    :execute "normal! a\<tab>private:\<cr>\<cr>"
+    :execute "normal! a\<tab>\<tab>~" . a:ClassName . "();\<cr>"
+    :execute "normal! a\<tab>protected:\<cr>"
+    :execute "normal! a\private:\<cr>"
     :execute "normal! a};\<cr>"
-    :execute "normal! kka\<tab>\<tab>"
+    :execute "normal! kka"
     "Comment out this line if you dont want to start in insert mode
     ":startinsert!
     "Comment this line if you dont want to save files straight away.
@@ -71,10 +73,6 @@ function! ClassNew(ClassName)
     "   example: inserting the header, and the ifndef... Then:
 	:execute "normal! a//Copyright Sam Collier 2022\<cr>\<cr>"
     :execute "normal! a#include \"" . a:ClassName . ".h\"\<cr>\<cr>"
-    :execute "normal! a" . a:ClassName . "::" . a:ClassName ."()\<cr>{\<cr>"
-    :execute "normal! a}\<cr>\<cr>"
-    :execute "normal! a" . a:ClassName . "::~" . a:ClassName ."()\<cr>{\<cr>"
-    :execute "normal! a}"
 	:execute "wincmd h"
     "Comment this line if you dont want to save files straight away.
     ":execute 'write'
@@ -89,3 +87,4 @@ au FileType typescript setlocal formatprg=prettier\ — parser\ typescript
 let b:ale_fixers = ['prettier', 'eslint']
 let b:ale_linters = {'javascript': ['eslint']}
 let g:ale_linters_explicit = 1
+
