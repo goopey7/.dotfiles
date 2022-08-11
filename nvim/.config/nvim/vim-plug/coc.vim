@@ -165,3 +165,17 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
+"Flutter
+nnoremap <leader>fe :CocCommand flutter.emulators <CR>
+nnoremap <leader>fd :below new output:///flutter-dev <CR>
+
+"Snippets
+imap <`> <Plug>(coc-snippets-expand)
+let g:UltiSnipsExpandTrigger = '<Nop>'
+let g:coc_snippet_next = '<TAB>'
+let g:coc_snippet_prev = '<S-TAB>'
+
+" Applying codeAction to the selected region.
+" Example: `<leader>aap` for current paragraph
+xmap <leader>a <Plug>(coc-codeaction-selected)
+nmap <leader>a <Plug>(coc-codeaction-selected)

@@ -30,7 +30,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> :bnext<CR>
 
 nnoremap <leader>f :Telescope find_files<CR>
-"nnoremap <leader>j :NERDTreeClose<CR>
+nnoremap <leader>j :NERDTreeToggle<CR>
 nnoremap <leader>g :LazyGit<CR>
 nnoremap <leader>l <C-w>l
 nnoremap <leader>h <C-w>h
@@ -44,7 +44,10 @@ nnoremap <leader>c :Class
 nnoremap <leader>v :AV<CR>
 nnoremap <leader>t :set noexpandtab<CR>:retab!<CR>
 
-    "C++ CLASS GENERATOR: OPENING 2 NEW FILES
+xnoremap y "+y
+nnoremap y "+y
+
+"C++ CLASS GENERATOR: OPENING 2 NEW FILES
 function! ClassNew(ClassName)
     "==================  editing header file =================================
     execute "e " . a:ClassName . ".h"
@@ -76,7 +79,7 @@ function! ClassNew(ClassName)
 	:execute "wincmd h"
     "Comment this line if you dont want to save files straight away.
     ":execute 'write'
-    endfunction
+endfunction
 
 command! -nargs=1 Class call ClassNew(<f-args>)
 

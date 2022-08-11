@@ -58,4 +58,14 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'dense-analysis/ale'
 	Plug 'tpope/vim-dadbod'
 	Plug 'kristijanhusak/vim-dadbod-ui'
+
+	" Snippets
+	Plug 'SirVer/ultisnips'
+	Plug 'honza/vim-snippets'
+	Plug 'natebosch/dartlang-snippets'
+	
+	" Dart
+	Plug 'dart-lang/dart-vim-plugin'
+
+
     call plug#end()
