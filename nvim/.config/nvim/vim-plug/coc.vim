@@ -166,14 +166,14 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 "Flutter
-nnoremap <leader>fe :CocCommand flutter.emulators <CR>
-nnoremap <leader>fd :below new output:///flutter-dev <CR>
+nnoremap <leader>e :CocCommand flutter.emulators <CR>
+nnoremap <leader>o :below new output:///flutter-dev <CR>
 
 "Snippets
-imap <`> <Plug>(coc-snippets-expand)
-let g:UltiSnipsExpandTrigger = '<Nop>'
-let g:coc_snippet_next = '<TAB>'
-let g:coc_snippet_prev = '<S-TAB>'
+"imap <TAB> <Plug>(coc-snippets-expand)
+"let g:UltiSnipsExpandTrigger = '<Nop>'
+"let g:coc_snippet_next = '<TAB>'
+"let g:coc_snippet_prev = '<S-TAB>'
 
 " Applying codeAction to the selected region.
 " Example: `<leader>aap` for current paragraph
