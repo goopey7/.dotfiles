@@ -97,3 +97,19 @@ nnoremap <leader>r :FlutterHotReload<CR>
 nnoremap <leader>R :FlutterHotRestart<CR>
 nnoremap <leader>X :FlutterRun<CR>
 
+hi BufferTabpageFill guifg=#9e3333
+
+hi BufferVisible guifg=#9e3333
+hi BufferVisibleIndex guifg=#9e3333
+hi BufferVisibleMod guifg=#9e3333
+hi BufferVisibleSign guifg=#9e3333
+
+hi BufferInactive guifg=#9e3333
+hi BufferInactiveIndex guifg=#9e3333
+hi BufferInactiveMod guifg=#9e3333
+hi BufferInactiveSign guifg=#9e3333
+
+"hi BufferCurrent guifg=#ffffff
+"hi BufferCurrentIndex guifg=#ffffff
+"hi BufferCurrentMod guifg=#ffffff
+"hi BUfferCurrentSign guifg=#ffffff

@@ -30,7 +30,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     "Collection of colorschemes
     Plug 'rafi/awesome-vim-colorschemes'
     "Tagbar for code navigation
-    Plug 'preservim/tagbar'
+    "Plug 'preservim/tagbar'
     "C++ syntax highlighting
     Plug 'octol/vim-cpp-enhanced-highlight'
     "Fuzzy finder
