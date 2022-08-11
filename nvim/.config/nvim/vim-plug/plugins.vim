@@ -59,13 +59,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'tpope/vim-dadbod'
 	Plug 'kristijanhusak/vim-dadbod-ui'
 
-	" Snippets
-	Plug 'SirVer/ultisnips'
-	Plug 'honza/vim-snippets'
-	Plug 'natebosch/dartlang-snippets'
-	
+	"Snippets
+	"Plug 'SirVer/ultisnips'
+
 	" Dart
 	Plug 'dart-lang/dart-vim-plugin'
-
+	Plug 'thosakwe/vim-flutter'
 
     call plug#end()

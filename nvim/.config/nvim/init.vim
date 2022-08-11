@@ -1,4 +1,5 @@
 let mapleader = " "
+let g:UltiSnipsExpandTrigger = "\\"
 let g:ale_completion_enabled = 1
 source $HOME/.config/nvim/vim-plug/plugins.vim
 source $HOME/.config/nvim/vim-plug/coc.vim
@@ -90,4 +91,9 @@ au FileType typescript setlocal formatprg=prettier\ — parser\ typescript
 let b:ale_fixers = ['prettier', 'eslint']
 let b:ale_linters = {'javascript': ['eslint']}
 let g:ale_linters_explicit = 1
+
+"Flutter
+nnoremap <leader>r :FlutterHotReload<CR>
+nnoremap <leader>R :FlutterHotRestart<CR>
+nnoremap <leader>X :FlutterRun<CR>
 
