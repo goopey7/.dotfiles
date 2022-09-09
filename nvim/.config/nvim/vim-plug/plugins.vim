@@ -66,4 +66,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'dart-lang/dart-vim-plugin'
 	Plug 'thosakwe/vim-flutter'
 
+	Plug 'SirVer/ultisnips'
+	Plug 'mlaursen/vim-react-snippets'
+
+
     call plug#end()

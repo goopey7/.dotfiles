@@ -113,3 +113,5 @@ hi BufferInactiveSign guifg=#9e3333
 "hi BufferCurrentIndex guifg=#ffffff
 "hi BufferCurrentMod guifg=#ffffff
 "hi BUfferCurrentSign guifg=#ffffff
+
+let g:UltiSnipsListSnippets = '<f2>'

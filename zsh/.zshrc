@@ -399,7 +399,6 @@ alias lg="lazygit"
 alias discord='discord --no-sandbox'
 alias gateway="route -n | grep 'UG[ \t]' | awk '{print $2}'"
 alias gate=gateway
-export LD_LIBRARY_PATH=/home/sam/src/casablanca/build.release/Release/Binaries
 export PATH="/home/$USER/bin:$PATH"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
