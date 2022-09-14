@@ -32,7 +32,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     "Tagbar for code navigation
     "Plug 'preservim/tagbar'
     "C++ syntax highlighting
-    Plug 'octol/vim-cpp-enhanced-highlight'
+    "Plug 'octol/vim-cpp-enhanced-highlight'
     "Fuzzy finder
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
@@ -43,31 +43,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'cdelledonne/vim-cmake'
 	"Auto define cpp
 	Plug 'tenfyzhong/vim-gencode-cpp'
-	Plug 'vim-scripts/a.vim'
+	Plug 'LucHermitte/lh-vim-lib'
+	Plug 'LucHermitte/alternate-lite'
 	"LazyGit
 	Plug 'kdheepak/lazygit.nvim'
-	"JS Server
-	Plug 'neoclide/coc-tsserver'
-	Plug 'pangloss/vim-javascript'
-
-	Plug 'leafgarland/typescript-vim'
-	Plug 'peitalin/vim-jsx-typescript'
-	Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-	Plug 'jparise/vim-graphql'
-	Plug 'maxmellon/vim-jsx-pretty'
-	Plug 'dense-analysis/ale'
-	Plug 'tpope/vim-dadbod'
-	Plug 'kristijanhusak/vim-dadbod-ui'
-
-	"Snippets
-	"Plug 'SirVer/ultisnips'
-
-	" Dart
-	Plug 'dart-lang/dart-vim-plugin'
-	Plug 'thosakwe/vim-flutter'
-
-	Plug 'SirVer/ultisnips'
-	Plug 'mlaursen/vim-react-snippets'
-
+	Plug 'drichardson/vim-unreal'
 
     call plug#end()

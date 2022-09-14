@@ -120,7 +120,7 @@ local browser2          = "firefox"
 local browser3          = "chromium -no-default-browser-check"
 local editor            = os.getenv("EDITOR") or "nano"
 local editorgui         = "discord"
-local filemanager       = "dolphin"
+local filemanager       = "thunar"
 local mailclient        = "brave"
 local mediaplayer       = "spotify"
 local terminal          = "alacritty"
@@ -324,9 +324,9 @@ globalkeys = my_table.join(
         {description = browser1, group = "function keys"}),
     awful.key({ modkey }, "F2", function () awful.util.spawn( "discord" ) end,
         {description = editorgui , group = "function keys" }),
-    awful.key({ modkey }, "F3", function () awful.util.spawn( "virt-manager" ) end,
+    awful.key({ modkey }, "F3", function () awful.util.spawn( "flatpak run com.valvesoftware.Steam" ) end,
         {description = "virt-manager" ,group = "function keys" }),
-    awful.key({ modkey }, "F4", function () awful.util.spawn( "gimp" ) end,
+    awful.key({ modkey }, "F4", function () awful.util.spawn( "flatpak run com.heroicgameslauncher.hgl" ) end,
         {description = "gimp" , group = "function keys" }),
     awful.key({ modkey }, "F5", function () awful.util.spawn( "meld" ) end,
         {description = "meld" , group = "function keys" }),
@@ -360,7 +360,7 @@ globalkeys = my_table.join(
         {description = "pulseaudio control", group = "super"}),
     --awful.key({ modkey }, "u", function () awful.screen.focused().mypromptbox:run() end,
           --{description = "run prompt", group = "super"}),
-    awful.key({ modkey }, "x",  function () awful.util.spawn( "arcolinux-logout" ) end,
+    awful.key({ modkey }, "x",  function () awful.util.spawn( "archlinux-logout" ) end,
       {description = "exit", group = "hotkeys"}),
     awful.key({ modkey }, "Escape", function () awful.util.spawn( "xkill" ) end,
         {description = "Kill proces", group = "hotkeys"}),

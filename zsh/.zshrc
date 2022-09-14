@@ -13,7 +13,7 @@ fi
 #installation via script from github
 #export ZSH="/home/$USER/.oh-my-zsh"
 #installation via paru -S oh-my-zsh-git
-export ZSH=/usr/share/oh-my-zsh/
+export ZSH=/home/sam/.oh-my-zsh/
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -83,7 +83,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -108,7 +108,6 @@ source $ZSH/oh-my-zsh.sh
 ####   ARCOLINUX SETTINGS   ####
 
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 setopt GLOB_DOTS
 
@@ -407,3 +406,5 @@ export PATH="/home/$USER/bin:$PATH"
 # Develop for web
 CHROME_EXECUTABLE=/bin/brave
 export CHROME_EXECUTABLE
+
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
