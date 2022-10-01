@@ -1,0 +1,32 @@
+vim.g.mapleader = " "
+
+local opts = {noremap = true, silent = true}
+
+
+--mappings for split navigations and moving buffers
+vim.keymap.set("n", "<C-h>", "<cmd>bprev<CR>",opts)
+vim.keymap.set("n", "<C-l>", "<cmd>bnext<CR>",opts)
+vim.keymap.set("n", "<C-j>", "<C-w>j",opts)
+vim.keymap.set("n", "<C-k>", "<C-w>k",opts)
+vim.keymap.set("n", "<leader>l", "<C-w>l",opts)
+vim.keymap.set("n", "<leader>h", "<C-w>h",opts)
+
+vim.keymap.set("n", "<leader>f", "<cmd>Telescope find_files<CR>",opts)
+vim.keymap.set("n", "<leader>j", "<cmd>NERDTreeToggle<CR>",opts)
+vim.keymap.set("n", "<leader>g", "<cmd>LazyGit<CR>",opts)
+vim.keymap.set("n", "<leader>w", "<cmd>bd<CR>",opts)
+vim.keymap.set("n", "<leader>q", "<cmd>CMakeGenerate build<CR>",opts)
+vim.keymap.set("n", "<leader>x", "<cmd>CMakeBuild<CR>",opts)
+vim.keymap.set("n", "<leader>z", "<cmd>CMakeClose<CR>",opts)
+vim.keymap.set("n", "<leader>d", "<cmd>GenDefinition<CR>",opts)
+vim.keymap.set("n", "<leader>v", "<cmd>AV<CR>",opts)
+vim.keymap.set("n", "<leader>t", "<cmd>set noexpandtab<CR><cmd>retab!<CR>",opts)
+
+--yank to clipboard register
+vim.keymap.set("n", "y", "\"+y")
+vim.keymap.set("x", "y", "\"+y")
+
+--cpp class generation
+vim.cmd('source cppClass.vim')
+vim.keymap.set("n", "<leader>c", ":Class ",{noremap=true})
+
