@@ -4,7 +4,8 @@ return require('packer').startup(function ()
     use 'wbthomason/packer.nvim'
 
 	-- colorscheme
-    use 'rafi/awesome-vim-colorschemes'
+    --use 'rafi/awesome-vim-colorschemes'
+	use 'gruvbox-community/gruvbox'
 
     -- Better Syntax Support
     use 'sheerun/vim-polyglot'
@@ -16,7 +17,7 @@ return require('packer').startup(function ()
     use 'jiangmiao/auto-pairs'
 
     -- Auto Complete
-    use 'neoclide/coc.nvim'
+    use {'neoclide/coc.nvim', branch='release'}
 
     --Status Bar at the bottom
     use 'vim-airline/vim-airline'
@@ -41,6 +42,10 @@ return require('packer').startup(function ()
 
     --Auto define cpp
     use 'tenfyzhong/vim-gencode-cpp'
+
+	--:AV
+	use 'vim-scripts/a.vim'
+
 
     --LazyGit
     use 'kdheepak/lazygit.nvim'

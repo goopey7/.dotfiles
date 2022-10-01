@@ -79,15 +79,15 @@ _G.packer_plugins = {
     path = "/home/sam/.local/share/nvim/site/pack/packer/start/NERDTree",
     url = "https://github.com/scrooloose/NERDTree"
   },
+  ["a.vim"] = {
+    loaded = true,
+    path = "/home/sam/.local/share/nvim/site/pack/packer/start/a.vim",
+    url = "https://github.com/vim-scripts/a.vim"
+  },
   ["auto-pairs"] = {
     loaded = true,
     path = "/home/sam/.local/share/nvim/site/pack/packer/start/auto-pairs",
     url = "https://github.com/jiangmiao/auto-pairs"
-  },
-  ["awesome-vim-colorschemes"] = {
-    loaded = true,
-    path = "/home/sam/.local/share/nvim/site/pack/packer/start/awesome-vim-colorschemes",
-    url = "https://github.com/rafi/awesome-vim-colorschemes"
   },
   ["barbar.nvim"] = {
     loaded = true,
@@ -98,6 +98,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/sam/.local/share/nvim/site/pack/packer/start/coc.nvim",
     url = "https://github.com/neoclide/coc.nvim"
+  },
+  gruvbox = {
+    loaded = true,
+    path = "/home/sam/.local/share/nvim/site/pack/packer/start/gruvbox",
+    url = "https://github.com/gruvbox-community/gruvbox"
   },
   ["lazygit.nvim"] = {
     loaded = true,

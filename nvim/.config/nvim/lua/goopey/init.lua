@@ -20,7 +20,9 @@ vim.opt.signcolumn = 'yes'
 vim.opt.colorcolumn = '100'
 vim.opt.splitbelow = true
 vim.opt.splitright = true
-vim.cmd('colorscheme jellybeans')
+vim.opt.background = 'dark'
+vim.g.gruvbox_contrast_dark = 'hard'
+vim.cmd('colorscheme gruvbox')
 --get rid of gross white tab
 vim.cmd('\
 hi BufferTabpageFill guifg=#9e3333\

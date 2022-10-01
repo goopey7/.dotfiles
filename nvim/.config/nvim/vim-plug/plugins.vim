@@ -48,5 +48,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	"LazyGit
 	Plug 'kdheepak/lazygit.nvim'
 	Plug 'drichardson/vim-unreal'
+	"debugging
+	Plug 'mfussenegger/nvim-dap'
+	Plug 'rcarriga/nvim-dap-ui'
+	Plug 'theHamsta/nvim-dap-virtual-text'
+	Plug 'nvim-telescope/telescope-dap.nvim'
+	Plug 'svermeulen/vimpeccable'
 
-    call plug#end()
+call plug#end()

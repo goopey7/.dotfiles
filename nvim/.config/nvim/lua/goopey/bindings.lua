@@ -27,6 +27,6 @@ vim.keymap.set("n", "y", "\"+y")
 vim.keymap.set("x", "y", "\"+y")
 
 --cpp class generation
-vim.cmd('source cppClass.vim')
+vim.cmd('source ' .. vim.fn.stdpath('config') .. '/cppClass.vim')
 vim.keymap.set("n", "<leader>c", ":Class ",{noremap=true})
 
