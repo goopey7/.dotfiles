@@ -388,6 +388,7 @@ neofetch
 #sfetch | lolcat
 alias src="cd /home/sam/src/"
 alias s="cd /home/sam/src && clear"
+alias n="cd /home/sam/notes && clear"
 alias r="cd /home/sam/src/rainyday && clear"
 alias vi=nvim
 alias c="cd /home/sam/src/cmp105_coursework-goopey7 && clear"
@@ -398,6 +399,9 @@ alias lg="lazygit"
 alias discord='discord --no-sandbox'
 alias gateway="route -n | grep 'UG[ \t]' | awk '{print $2}'"
 alias gate=gateway
+alias ec="expressvpn connect"
+alias ed="expressvpn disconnect"
+alias nc="cd ~/.config/nvim/"
 export PATH="/home/$USER/bin:$PATH"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
