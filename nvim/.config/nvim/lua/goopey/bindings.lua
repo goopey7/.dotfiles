@@ -30,3 +30,5 @@ vim.keymap.set("x", "y", "\"+y")
 vim.cmd('source ' .. vim.fn.stdpath('config') .. '/cppClass.vim')
 vim.keymap.set("n", "<leader>c", ":Class ",{noremap=true})
 
+--coc bindings
+vim.cmd('source' .. vim.fn.stdpath('config') .. '/coc.vim')
