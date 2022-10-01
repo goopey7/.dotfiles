@@ -35,4 +35,4 @@ hi BufferInactiveIndex guifg=#9e3333\
 hi BufferInactiveMod guifg=#9e3333\
 hi BufferInactiveSign guifg=#9e3333\
 	')
-
+vim.api.nvim_create_autocmd("BufEnter", { callback = function() vim.opt.formatoptions = vim.opt.formatoptions - { "c","r","o" } end, })
