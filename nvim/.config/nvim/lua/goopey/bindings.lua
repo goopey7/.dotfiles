@@ -4,8 +4,8 @@ local opts = {noremap = true, silent = true}
 
 
 --mappings for split navigations and moving buffers
-vim.keymap.set("n", "<C-h>", "<cmd>bprev<CR>",opts)
-vim.keymap.set("n", "<C-l>", "<cmd>bnext<CR>",opts)
+vim.keymap.set("n", "<C-h>", "<cmd>TablineBufferPrevious<CR>",opts)
+vim.keymap.set("n", "<C-l>", "<cmd>TablineBufferNext<CR>",opts)
 vim.keymap.set("n", "<C-j>", "<C-w>j",opts)
 vim.keymap.set("n", "<C-k>", "<C-w>k",opts)
 vim.keymap.set("n", "<leader>l", "<C-w>l",opts)

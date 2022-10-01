@@ -82,17 +82,7 @@ _G.packer_plugins = {
   ["a.vim"] = {
     loaded = true,
     path = "/home/sam/.local/share/nvim/site/pack/packer/start/a.vim",
-    url = "https://github.com/vim-scripts/a.vim"
-  },
-  ["auto-pairs"] = {
-    loaded = true,
-    path = "/home/sam/.local/share/nvim/site/pack/packer/start/auto-pairs",
-    url = "https://github.com/jiangmiao/auto-pairs"
-  },
-  ["barbar.nvim"] = {
-    loaded = true,
-    path = "/home/sam/.local/share/nvim/site/pack/packer/start/barbar.nvim",
-    url = "https://github.com/romgrk/barbar.nvim"
+    url = "https://github.com/goopey7/a.vim"
   },
   ["coc.nvim"] = {
     loaded = true,
@@ -108,6 +98,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/sam/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
     url = "https://github.com/kdheepak/lazygit.nvim"
+  },
+  ["lualine.nvim"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/sam/.local/share/nvim/site/pack/packer/opt/lualine.nvim",
+    url = "https://github.com/hoob3rt/lualine.nvim"
   },
   ["nvim-dap"] = {
     loaded = true,
@@ -138,6 +134,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/sam/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["tabline.nvim"] = {
+    config = { "\27LJ\2\n‰\3\0\0\4\0\t\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\0016\0\6\0009\0\a\0'\2\b\0B\0\2\1K\0\1\0‘\1      set guioptions-=e \" Use showtabline in gui vim\n      set sessionoptions+=tabpages,globals \" store tabpages and globals in session\n    \bcmd\bvim\foptions\1\0\b\19show_tabs_only\1\18modified_icon\a+ \23show_filename_only\2\15show_bufnr\1\18show_devicons\2\21show_tabs_always\1\27max_bufferline_percent\3B\20modified_italic\1\1\0\1\venable\2\nsetup\ftabline\frequire\0" },
+    loaded = true,
+    path = "/home/sam/.local/share/nvim/site/pack/packer/start/tabline.nvim",
+    url = "https://github.com/kdheepak/tabline.nvim"
   },
   ["telescope-dap.nvim"] = {
     loaded = true,
@@ -197,6 +199,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: tabline.nvim
+time([[Config for tabline.nvim]], true)
+try_loadstring("\27LJ\2\n‰\3\0\0\4\0\t\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\0016\0\6\0009\0\a\0'\2\b\0B\0\2\1K\0\1\0‘\1      set guioptions-=e \" Use showtabline in gui vim\n      set sessionoptions+=tabpages,globals \" store tabpages and globals in session\n    \bcmd\bvim\foptions\1\0\b\19show_tabs_only\1\18modified_icon\a+ \23show_filename_only\2\15show_bufnr\1\18show_devicons\2\21show_tabs_always\1\27max_bufferline_percent\3B\20modified_italic\1\1\0\1\venable\2\nsetup\ftabline\frequire\0", "config", "tabline.nvim")
+time([[Config for tabline.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

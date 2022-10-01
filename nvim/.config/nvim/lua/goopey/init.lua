@@ -23,16 +23,7 @@ vim.opt.splitright = true
 vim.opt.background = 'dark'
 vim.g.gruvbox_contrast_dark = 'hard'
 vim.cmd('colorscheme gruvbox')
---get rid of gross white tab
-vim.cmd('\
-hi BufferTabpageFill guifg=#9e3333\
-hi BufferVisible guifg=#9e3333\
-hi BufferVisibleIndex guifg=#9e3333\
-hi BufferVisibleMod guifg=#9e3333\
-hi BufferVisibleSign guifg=#9e3333\
-hi BufferInactive guifg=#9e3333\
-hi BufferInactiveIndex guifg=#9e3333\
-hi BufferInactiveMod guifg=#9e3333\
-hi BufferInactiveSign guifg=#9e3333\
-	')
+
+--eliminate auto comments on next line
 vim.api.nvim_create_autocmd("BufEnter", { callback = function() vim.opt.formatoptions = vim.opt.formatoptions - { "c","r","o" } end, })
+
