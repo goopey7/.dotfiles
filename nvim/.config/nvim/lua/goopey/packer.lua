@@ -13,9 +13,6 @@ return require('packer').startup(function ()
     -- File Explorer
     use 'scrooloose/NERDTree'
 
-    -- Auto Complete
-    use {'neoclide/coc.nvim', branch='release'}
-
     --Status Bar at the bottom
     use 'vim-airline/vim-airline'
     use 'vim-airline/vim-airline-themes'
@@ -28,6 +25,7 @@ return require('packer').startup(function ()
 
     --Fuzzy finder
     use 'nvim-lua/plenary.nvim'
+    use 'nvim-treesitter/nvim-treesitter'
     use 'nvim-telescope/telescope.nvim'
 
     --Nice tab bar
@@ -78,5 +76,19 @@ return require('packer').startup(function ()
     use 'theHamsta/nvim-dap-virtual-text'
     use 'nvim-telescope/telescope-dap.nvim'
     use 'svermeulen/vimpeccable'
+
+    -- COC
+    use {'neoclide/coc.nvim', branch='release'}
+
+    -- Neoterm
+    use 'kassio/neoterm'
+
+    -- Omnisharp
+    use 'OmniSharp/omnisharp-vim'
+
+
+    --Built in LSP Stuff
+    --use "neovim/nvim-lspconfig"
+    --use "nvim-lua/completion-nvim"
 
 end)
