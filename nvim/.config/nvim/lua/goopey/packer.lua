@@ -91,4 +91,7 @@ return require('packer').startup(function ()
     --use "neovim/nvim-lspconfig"
     --use "nvim-lua/completion-nvim"
 
+    --Rust
+    use 'timonv/vim-cargo'
+
 end)

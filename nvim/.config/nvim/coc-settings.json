@@ -9,12 +9,21 @@
           "directory": "/tmp/ccls"
         }
       }
-  }
+  },
+
+  "csharp-ls": {
+          "command": "csharp-ls",
+          "filetypes": ["cs"],
+          "rootPatterns": ["*.csproj", ".vim/", ".git/", ".hg/"]
+        }
 },
 "diagnostic.virtualText": true,
 "diagnostic.virtualTextCurrentLineOnly": false,
 "diagnostic.messageTarget": "echo",
-"flutter.provider.enableSnippet": false
+"flutter.provider.enableSnippet": false,
+
+"coc.source.OmniSharp.enable" : true,
+"coc.source.OmniSharp.triggerCharacters" : "."
 }
 
 

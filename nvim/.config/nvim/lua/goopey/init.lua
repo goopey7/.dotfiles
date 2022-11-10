@@ -28,3 +28,9 @@ vim.cmd('colorscheme gruvbox')
 --eliminate auto comments on next line
 vim.api.nvim_create_autocmd("BufEnter", { callback = function() vim.opt.formatoptions = vim.opt.formatoptions - { "c","r","o" } end, })
 
+vim.cmd('set noexpandtab')
+vim.bo.expandtab = false;
+vim.o.expandtab = false;
+vim.opt.expandtab = false;
+vim.cmd('set noet')
+vim.cmd('filetype plugin off')
