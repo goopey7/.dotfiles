@@ -18,29 +18,61 @@ vim.keymap.set("n", "<leader>j", "<cmd>NERDTreeToggle<CR>",opts)
 vim.keymap.set("n", "<leader>g", "<cmd>LazyGit<CR>",opts)
 vim.keymap.set("n", "<leader>w", "<cmd>bd<CR>",opts)
 vim.keymap.set("n", "<leader>W", "<cmd>bd!<CR>",opts)
-vim.keymap.set("n", "<leader>q", "<cmd>CMakeGenerate build<CR>",opts)
-vim.keymap.set("n", "<leader>x", "<cmd>CMakeBuild<CR>",opts)
+
 vim.keymap.set("n", "<leader>X", "<cmd>T clear && cd ../ && scons platform=linux && cd src<CR>",opts)
-vim.keymap.set("n", "<leader>z", "<cmd>CMakeClose<CR>",opts)
-vim.keymap.set("n", "<leader>D", "<cmd>GenDefinition<CR>",opts)
-vim.keymap.set("n", "<leader>v", "<cmd>AV<CR>",opts)
 vim.keymap.set("n", "<leader>t", "<cmd>set noexpandtab<CR><cmd>retab!<CR>",opts)
 
 --yank to clipboard register
 vim.keymap.set("n", "y", "\"+y")
 vim.keymap.set("x", "y", "\"+y")
 
---cpp class generation
-vim.cmd('source ' .. vim.fn.stdpath('config') .. '/cppClass.vim')
-vim.keymap.set("n", "<leader>c", ":Class ",{noremap=true})
+local function code_keymap()
+  if vim.fn.has "nvim-0.7" then
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = "*",
+      callback = function()
+        vim.schedule(CodeRunner)
+      end,
+    })
+  else
+    vim.cmd "autocmd FileType * lua CodeRunner()"
+  end
 
---debugging
-vim.keymap.set("n","<leader>b", "<cmd>lua require'dap'.toggle_breakpoint()<CR>",opts)
-vim.keymap.set("n","<leader>B", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>",opts)
-vim.keymap.set("n","<leader>dr",":lua require'dap'.repl.open()<CR>",opts)
-vim.keymap.set("n","<leader>dc",":lua require'dap'.continue()<CR>",opts)
-vim.keymap.set("n","<leader>dsi",":lua require'dap'.step_into()<CR>",opts)
-vim.keymap.set("n","<leader>dso",":lua require'dap'.step_over()<CR>",opts)
-vim.keymap.set("n","<leader>du",":lua require'dapui'.toggle()<CR>",opts)
-vim.keymap.set("n","<leader>ddb","<cmd>Clbps<CR>",opts)
+		function CodeRunner()
+			local bufnr = vim.api.nvim_get_current_buf()
+			local ft = vim.api.nvim_buf_get_option(bufnr, "filetype")
+			local fname = vim.fn.expand "%:p:t"
 
+			if ft == "cpp" then
+			--cpp class generation
+			vim.cmd('source ' .. vim.fn.stdpath('config') .. '/cppClass.vim')
+			vim.keymap.set("n", "<leader>c", ":Class ",{noremap=true})
+
+			--cpp definition generation
+			vim.keymap.set("n", "<leader>D", "<cmd>GenDefinition<CR>",opts)
+
+			--AV vertical split
+			vim.keymap.set("n", "<leader>v", "<cmd>AV<CR>",opts)
+
+			--cmake
+			vim.keymap.set("n", "<leader>q", "<cmd>CMakeGenerate build<CR>",opts)
+			vim.keymap.set("n", "<leader>x", "<cmd>CMakeBuild<CR>",opts)
+			vim.keymap.set("n", "<leader>z", "<cmd>CMakeClose<CR>",opts)
+
+			--debugging
+			vim.keymap.set("n","<leader>b", "<cmd>lua require'dap'.toggle_breakpoint()<CR>",opts)
+			vim.keymap.set("n","<leader>B", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>",opts)
+			vim.keymap.set("n","<leader>dr",":lua require'dap'.repl.open()<CR>",opts)
+			vim.keymap.set("n","<leader>dc",":lua require'dap'.continue()<CR>",opts)
+			vim.keymap.set("n","<leader>dsi",":lua require'dap'.step_into()<CR>",opts)
+			vim.keymap.set("n","<leader>dso",":lua require'dap'.step_over()<CR>",opts)
+			vim.keymap.set("n","<leader>du",":lua require'dapui'.toggle()<CR>",opts)
+			vim.keymap.set("n","<leader>ddb","<cmd>Clbps<CR>",opts)
+
+			elseif ft == "rust" then
+			vim.keymap.set("n", "<leader>x", "<cmd>CargoRun<CR>",opts)
+			end
+	end
+end
+
+code_keymap()
