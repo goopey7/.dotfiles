@@ -70,7 +70,7 @@ local function code_keymap()
 			vim.keymap.set("n","<leader>ddb","<cmd>Clbps<CR>",opts)
 
 			elseif ft == "rust" then
-			vim.keymap.set("n", "<leader>x", "<cmd>CargoRun<CR>",opts)
+			vim.keymap.set("n", "<leader>x", "<cmd>CargoBuild<CR>",opts)
 			end
 	end
 end
