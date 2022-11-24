@@ -109,6 +109,7 @@ source $ZSH/oh-my-zsh.sh
 
 
 
+setopt EXTENDED_GLOB
 setopt GLOB_DOTS
 
 # If not running interactively, don't do anything
@@ -116,10 +117,10 @@ setopt GLOB_DOTS
 
 export HISTCONTROL=ignoreboth:erasedups
 
-# Make nano the default editor
+# Make neovim the default editor
 
-export EDITOR='nano'
-export VISUAL='nano'
+export EDITOR='nvim'
+export VISUAL='nvim'
 
 #PS1='[\u@\h \W]\$ '
 
@@ -402,7 +403,9 @@ alias gate=gateway
 alias ec="expressvpn connect"
 alias ed="expressvpn disconnect"
 alias nc="cd ~/.config/nvim/"
+alias game="cd ~/src/unity/LookingForLegs"
 export PATH="/home/$USER/bin:$PATH"
+export PATH="/home/$USER/.cargo/bin:$PATH"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
