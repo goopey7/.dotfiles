@@ -35,3 +35,6 @@ vim.o.expandtab = false;
 vim.opt.expandtab = false;
 vim.cmd('set noet')
 --vim.cmd('filetype plugin off')
+
+--telescope ignore target in rust
+require('telescope').setup{defaults = {file_ignore_patterns = {"target/*"}}}

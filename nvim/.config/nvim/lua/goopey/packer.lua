@@ -94,4 +94,7 @@ return require('packer').startup(function ()
     --Rust
     use 'timonv/vim-cargo'
 
+    --copilot
+    use 'github/copilot.vim'
+
 end)
