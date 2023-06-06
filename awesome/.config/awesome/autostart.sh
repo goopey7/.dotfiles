@@ -9,8 +9,9 @@ function run {
 #run xrandr --output VGA-1 --primary --mode 1360x768 --pos 0x0 --rotate normal
 #run xrandr --output HDMI2 --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off
 #autorandr horizontal
-run nm-applet
+#run nm-applet
 #run caffeine
+
 run pamac-tray
 run variety
 run xfce4-power-manager
@@ -28,12 +29,14 @@ feh --bg-fill /usr/share/backgrounds/Source.png &
 #run dropbox
 #run insync start
 #run spotify
-#run ckb-next -b
+ckb-next -b &
 #run discord
 #run telegram-desktop
+run xbanish
+#run ckb-next
 
 # map caps key to escape
 setxkbmap -option caps:escape
 
-polychromatic-tray-applet
 xinput --set-prop 8 'libinput Accel Speed' 0
+polychromatic-tray-applet &
