@@ -1,6 +1,7 @@
 require("goopey.packer")
 require("goopey.bindings")
 require("goopey.debug")
+require("goopey.lsp")
 
 vim.g.airline_theme = 'apprentice'
 vim.opt.tabstop = 4

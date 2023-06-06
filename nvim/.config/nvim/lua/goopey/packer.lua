@@ -78,7 +78,7 @@ return require('packer').startup(function ()
     use 'svermeulen/vimpeccable'
 
     -- COC
-    use {'neoclide/coc.nvim', branch='release'}
+    --use {'neoclide/coc.nvim', branch='release'}
 
     -- Neoterm
     use 'kassio/neoterm'
@@ -86,12 +86,21 @@ return require('packer').startup(function ()
     -- Omnisharp
     use 'OmniSharp/omnisharp-vim'
 
-
-    --Built in LSP Stuff
-    --use "neovim/nvim-lspconfig"
-    --use "nvim-lua/completion-nvim"
-
     --Rust
-    use 'timonv/vim-cargo'
+    use 'goopey7/vim-cargo'
+
+    --Copilot
+	use "zbirenbaum/copilot.lua"
+
+	--LSP
+	use 'neovim/nvim-lspconfig'
+
+    --Completion
+	use 'hrsh7th/nvim-cmp'
+	use 'hrsh7th/cmp-nvim-lsp'
+	use 'hrsh7th/cmp-buffer'
+	use 'hrsh7th/cmp-path'
+    use 'L3MON4D3/LuaSnip'
+    use 'saadparwaiz1/cmp_luasnip'
 
 end)
