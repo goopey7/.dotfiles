@@ -16,9 +16,9 @@ local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
 local theme                                     = {}
 theme.confdir                                   = os.getenv("HOME") .. "/.config/awesome/themes/multicolor"
---theme.wallpaper                                 = theme.confdir .. "/wallpaper.jpg"
-theme.font                                      = "Noto Sans Regular 11"
-theme.taglist_font                              = "Noto Sans Regular 13"
+--theme.wallpaper                                 = "~/background.jpg"
+theme.font                                      = "Noto Sans Regular 10"
+theme.taglist_font                              = "Noto Sans Regular 14"
 theme.menu_bg_normal                            = "#000000"
 theme.menu_bg_focus                             = "#000000"
 theme.bg_normal                                 = "#000000"
@@ -96,6 +96,40 @@ theme.titlebar_maximized_button_normal_active   = theme.confdir .. "/icons/title
 theme.titlebar_maximized_button_focus_active    = theme.confdir .. "/icons/titlebar/maximized_focus_active.png"
 theme.wallpaper                                 = "/usr/share/backgrounds/Source.png"
 local markup = lain.util.markup
+
+-- Battery Widget
+local batterywidget = wibox.widget.textbox()
+batterywidget:set_text(" | Battery | ")
+local batterywidgettimer = gears.timer({ timeout = 5 })
+batterywidgettimer:connect_signal("timeout",
+  function()
+    local fh = assert(io.popen("acpi | cut -d, -f 2,3 -", "r"))
+    batterywidget:set_text(" |" .. fh:read("*l") .. " | ")
+    fh:close()
+  end
+)
+batterywidgettimer:start()
+
+-- brightness
+local backlight_bar = wibox.widget {
+    max_value     = 1,
+    forced_height = 20,
+    forced_width  = 100,
+    shape         = gears.shape.rounded_bar,
+    border_width  = 2,
+    widget        = wibox.widget.progressbar,
+}
+local backlight = awful.widget.watch("xbacklight -get", 10,
+    function(widget, stdout)
+        local perc = tonumber(stdout:match("(%d+).%d"))
+        widget:set_text("Brightness: "..perc.."%")
+        backlight_bar:set_value(perc/100)
+    end
+)
+local backlight_stack = wibox.widget {
+    backlight_bar, backlight,
+    layout = wibox.layout.stack
+}
 
 -- Textclock
 os.setlocale(os.getenv("LANG")) -- to localize the clock
@@ -329,12 +363,11 @@ function theme.at_screen_connect(s)
             --theme.weather.widget,
             --tempicon,
             --temp.widget,
-            --baticon,
-            --bat.widget,
+            baticon,
+            bat.widget,
             clockicon,
             mytextclock,
             wibox.widget.systray(),
-
         },
     }
 

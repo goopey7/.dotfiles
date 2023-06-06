@@ -120,7 +120,7 @@ local browser2          = "firefox"
 local browser3          = "chromium -no-default-browser-check"
 local editor            = os.getenv("EDITOR") or "nano"
 local editorgui         = "discord"
-local filemanager       = "thunar"
+local filemanager       = "dolphin"
 local mailclient        = "brave"
 local mediaplayer       = "spotify"
 local terminal          = "alacritty"
@@ -664,9 +664,9 @@ globalkeys = my_table.join(
               --{description = "show weather", group = "widgets"}),
 
     -- Brightness
-    awful.key({ }, "XF86MonBrightnessUp", function () os.execute("xbacklight -inc 10") end,
+    awful.key({ }, "XF86MonBrightnessUp", function () os.execute("xbacklight -inc 1") end,
               {description = "+10%", group = "hotkeys"}),
-    awful.key({ }, "XF86MonBrightnessDown", function () os.execute("xbacklight -dec 10") end,
+    awful.key({ }, "XF86MonBrightnessDown", function () os.execute("xbacklight -dec 1") end,
               {description = "-10%", group = "hotkeys"}),
 
     -- ALSA volume control
@@ -1149,4 +1149,3 @@ awful.spawn.with_shell("picom -b --config  $HOME/.config/awesome/picom.conf")
 
 
 awful.screen.set_auto_dpi_enabled( true )
-
