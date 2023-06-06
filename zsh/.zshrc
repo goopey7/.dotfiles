@@ -406,12 +406,13 @@ alias nc="cd ~/.config/nvim/"
 alias game="cd ~/src/unity/LookingForLegs"
 export PATH="/home/$USER/bin:$PATH"
 export PATH="/home/$USER/.cargo/bin:$PATH"
+export PATH="/opt/flutter/bin:$PATH"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Develop for web
-CHROME_EXECUTABLE=/bin/brave
-export CHROME_EXECUTABLE
+export CHROME_EXECUTABLE=/bin/brave
 
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+export CARGO_NET_GIT_FETCH_WITH_CLI=true
