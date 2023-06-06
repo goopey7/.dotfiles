@@ -4,7 +4,7 @@ function! ClassNew(ClassName)
     execute "e " . a:ClassName . ".h"
     "At this stage the autocomands for this filetype are done.
     "   example: inserting the header, and the ifndef... Then:
-	:execute "normal! a//Copyright Sam Collier 2022\<cr>"
+	:execute "normal! a//Sam Collier 2023\<cr>"
 	:execute "normal! a#pragma once\<cr>\<cr>\<cr>"
     :execute "normal! a" . "class " . a:ClassName ."\<cr>{\<cr>"
     :execute "normal! a\<tab>public:\<cr>"
@@ -24,7 +24,7 @@ function! ClassNew(ClassName)
     execute "vsp %:h/" . a:ClassName . ".cpp"
     "At this stage the autocomands for this filetype are done.
     "   example: inserting the header, and the ifndef... Then:
-	:execute "normal! a//Copyright Sam Collier 2022\<cr>\<cr>"
+	:execute "normal! a//Sam Collier 2023\<cr>\<cr>"
     :execute "normal! a#include \"" . a:ClassName . ".h\"\<cr>\<cr>"
 	:execute "wincmd h"
     "Comment this line if you dont want to save files straight away.

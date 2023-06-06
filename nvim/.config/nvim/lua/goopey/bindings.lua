@@ -3,7 +3,7 @@ vim.g.mapleader = " "
 local opts = {noremap = true, silent = true}
 
 --coc bindings
-vim.cmd('source' .. vim.fn.stdpath('config') .. '/coc.vim')
+--vim.cmd('source' .. vim.fn.stdpath('config') .. '/coc.vim')
 
 --mappings for split navigations and moving buffers
 vim.keymap.set("n", "<C-h>", "<cmd>TablineBufferPrevious<CR>",opts)
@@ -52,7 +52,9 @@ local function code_keymap()
 			vim.keymap.set("n", "<leader>D", "<cmd>GenDefinition<CR>",opts)
 
 			--AV vertical split
-			vim.keymap.set("n", "<leader>v", "<cmd>AV<CR>",opts)
+			vim.keymap.set("n", "<leader>V", "<cmd>AV<CR>",opts)
+			vim.keymap.set("n", "<leader>v", "<cmd>A<CR>",opts)
+			vim.keymap.set("n", "<leader>n", "<cmd>A<CR>",opts)
 
 			--cmake
 			vim.keymap.set("n", "<leader>q", "<cmd>CMakeGenerate build<CR>",opts)
@@ -71,6 +73,7 @@ local function code_keymap()
 
 			elseif ft == "rust" then
 			vim.keymap.set("n", "<leader>x", "<cmd>CargoBuild<CR>",opts)
+			vim.keymap.set("n", "<leader>X", "<cmd>CargoRun<CR>",opts)
 			end
 	end
 end
