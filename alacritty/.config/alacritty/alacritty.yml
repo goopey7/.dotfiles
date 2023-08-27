@@ -244,7 +244,7 @@ window.opacity: 0.8
 #    - --login
 
 shell:
-  program: /bin/zsh
+  program: /bin/fish
   args:
     - -l
     - -c
