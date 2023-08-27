@@ -46,6 +46,7 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+beautiful.wallpaper = "~/.config/awesome/wallpaper/nyc.jpg"
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
@@ -160,12 +161,6 @@ awful.screen.connect_for_each_screen(function(s)
     s.mypromptbox = awful.widget.prompt()
     -- Create an imagebox widget which will contain an icon indicating which layout we're using.
     -- We need one layoutbox per screen.
-    s.mylayoutbox = awful.widget.layoutbox(s)
-    s.mylayoutbox:buttons(gears.table.join(
-                           awful.button({ }, 1, function () awful.layout.inc( 1) end),
-                           awful.button({ }, 3, function () awful.layout.inc(-1) end),
-                           awful.button({ }, 4, function () awful.layout.inc( 1) end),
-                           awful.button({ }, 5, function () awful.layout.inc(-1) end)))
     -- Create a taglist widget
     s.mytaglist = awful.widget.taglist {
         screen  = s,
@@ -177,7 +172,12 @@ awful.screen.connect_for_each_screen(function(s)
     s.mytasklist = awful.widget.tasklist {
         screen  = s,
         filter  = awful.widget.tasklist.filter.currenttags,
-        buttons = tasklist_buttons
+        buttons = tasklist_buttons,
+		style = {
+			shape_border_width = 2,
+			shape_border_color = '#777777',
+			shape = gears.shape.powerline,
+		},
     }
 
     -- Create the wibox
@@ -188,17 +188,15 @@ awful.screen.connect_for_each_screen(function(s)
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
-            mylauncher,
+            --mylauncher,
             s.mytaglist,
             s.mypromptbox,
         },
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            mykeyboardlayout,
             wibox.widget.systray(),
             mytextclock,
-            s.mylayoutbox,
         },
     }
 end)
