@@ -21,6 +21,7 @@ vim.keymap.set("n", "<leader>W", "<cmd>bd!<CR>",opts)
 
 vim.keymap.set("n", "<leader>X", "<cmd>T clear && cd ../ && scons platform=linux && cd src<CR>",opts)
 vim.keymap.set("n", "<leader>t", "<cmd>set noexpandtab<CR><cmd>retab!<CR>",opts)
+vim.keymap.set("n", "<leader>F", "<cmd> lua vim.lsp.buf.format()<CR>", opts)
 
 --yank to clipboard register
 vim.keymap.set("n", "y", "\"+y")
@@ -61,6 +62,11 @@ local function code_keymap()
 			vim.keymap.set("n", "<leader>x", "<cmd>CMakeBuild<CR>",opts)
 			vim.keymap.set("n", "<leader>z", "<cmd>CMakeClose<CR>",opts)
 
+			elseif ft == "rust" then
+			vim.keymap.set("n", "<leader>x", "<cmd>CargoBuild<CR>",opts)
+			vim.keymap.set("n", "<leader>X", "<cmd>CargoRun<CR>",opts)
+			end
+
 			--debugging
 			vim.keymap.set("n","<leader>b", "<cmd>lua require'dap'.toggle_breakpoint()<CR>",opts)
 			vim.keymap.set("n","<leader>B", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>",opts)
@@ -70,11 +76,6 @@ local function code_keymap()
 			vim.keymap.set("n","<leader>dso",":lua require'dap'.step_over()<CR>",opts)
 			vim.keymap.set("n","<leader>du",":lua require'dapui'.toggle()<CR>",opts)
 			vim.keymap.set("n","<leader>ddb","<cmd>Clbps<CR>",opts)
-
-			elseif ft == "rust" then
-			vim.keymap.set("n", "<leader>x", "<cmd>CargoBuild<CR>",opts)
-			vim.keymap.set("n", "<leader>X", "<cmd>CargoRun<CR>",opts)
-			end
 	end
 end
 

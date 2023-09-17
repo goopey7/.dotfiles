@@ -5,12 +5,6 @@ return require('packer').startup(function ()
 
 	-- colorscheme
     --use 'rafi/awesome-vim-colorschemes'
-	use 'gruvbox-community/gruvbox'
-
-    -- Better Syntax Support
-    use 'sheerun/vim-polyglot'
-
-    -- File Explorer
     use 'scrooloose/NERDTree'
 
     --Status Bar at the bottom
@@ -105,5 +99,13 @@ return require('packer').startup(function ()
 
     --copilot
     use 'github/copilot.vim'
+
+    --wakatime
+    use 'wakatime/vim-wakatime'
+
+	--gruvbox
+	use 'morhetz/gruvbox'
+
+	use 'tikhomirov/vim-glsl'
 
 end)

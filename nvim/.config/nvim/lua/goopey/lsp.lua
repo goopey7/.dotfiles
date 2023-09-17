@@ -3,24 +3,37 @@ vim.cmd('nnoremap <silent> K :<CR>')
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
---Rust bindings
-require'lspconfig'.rust_analyzer.setup{
-	capabilities = capabilities,
-	on_attach = function()
+local default_bindings = function ()
 		vim.keymap.set('n', 'K', vim.lsp.buf.hover, {buffer=0})
 		vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {buffer=0})
 		vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, {buffer=0})
 		vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, {buffer=0})
 		vim.keymap.set('n', '<leader><cr>', vim.lsp.buf.code_action, {buffer=0})
+		vim.keymap.set('v', '<leader><cr>', vim.lsp.buf.code_action, {buffer=0})
 		vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {buffer=0})
 		vim.keymap.set('n', '<leader>dj', vim.diagnostic.goto_next, {buffer=0})
 		vim.keymap.set('n', '<leader>dk', vim.diagnostic.goto_prev, {buffer=0})
 		vim.keymap.set('n', '<leader>dl', "<cmd>Telescope diagnostics<cr>", {buffer=0})
 		vim.keymap.set('n', '<leader>rf', "<cmd>Telescope lsp_references<cr>", {buffer=0})
+end
+
+--Rust bindings
+require'lspconfig'.rust_analyzer.setup{
+	capabilities = capabilities,
+	on_attach = function()
+		default_bindings()
 	end,
 }
 
---C++ bindings
+--Dart bindings
+require'lspconfig'.dartls.setup{
+	capabilities = capabilities,
+	on_attach = function()
+		default_bindings()
+	end,
+}
+
+--Clang bindings
 require'lspconfig'.clangd.setup{
 	capabilities = capabilities,
 	cmd = {
@@ -29,17 +42,42 @@ require'lspconfig'.clangd.setup{
 		"--suggest-missing-includes",
 	},
 	on_attach = function()
-		vim.keymap.set('n', 'K', vim.lsp.buf.hover, {buffer=0})
-		vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {buffer=0})
-		vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, {buffer=0})
-		vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, {buffer=0})
-		vim.keymap.set('n', '<leader><cr>', vim.lsp.buf.code_action, {buffer=0})
-		vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {buffer=0})
-		vim.keymap.set('n', '<leader>dj', vim.diagnostic.goto_next, {buffer=0})
-		vim.keymap.set('n', '<leader>dk', vim.diagnostic.goto_prev, {buffer=0})
-		vim.keymap.set('n', '<leader>dl', "<cmd>Telescope diagnostics<cr>", {buffer=0})
-		vim.keymap.set('n', '<leader>rf', "<cmd>Telescope lsp_references<cr>", {buffer=0})
+		default_bindings()
 	end,
+}
+
+--Lua
+require'lspconfig'.lua_ls.setup {
+	on_attach = function ()
+		default_bindings()
+	end,
+  settings = {
+    Lua = {
+      runtime = {
+        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+        version = 'LuaJIT',
+      },
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = {'vim'},
+      },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file("", true),
+      },
+      -- Do not send telemetry data containing a randomized but unique identifier
+      telemetry = {
+        enable = false,
+      },
+    },
+  },
+}
+
+--TS/JS
+require'lspconfig'.tsserver.setup{
+	on_attach = function ()
+		default_bindings()
+	end
 }
 
 vim.opt.completeopt = {"menu", "menuone", "noselect"}
