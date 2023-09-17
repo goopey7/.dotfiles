@@ -1,2 +1,2 @@
 #!/bin/bash
-stow -vSt ~ awesome git nvim zsh tmux
+stow -vSt ~ awesome git nvim alacritty
