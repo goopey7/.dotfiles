@@ -7,6 +7,7 @@ run() {
 }
 
 #run discord
+ckb-next -b &
 run xbanish
 # map caps key to escape
 setxkbmap -option caps:escape

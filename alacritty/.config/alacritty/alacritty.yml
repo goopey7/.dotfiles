@@ -103,8 +103,8 @@ scrolling:
 
 # Font configuration
 font:
-#  normal:
-#    family: "MesloLGS NF"    
+  normal:
+    family: "Source Code Pro"    
   # Point size
   size: 15.0
 
