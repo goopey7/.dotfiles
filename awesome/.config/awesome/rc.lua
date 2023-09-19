@@ -54,7 +54,7 @@ beautiful.init("~/.config/awesome/default/theme.lua")
 awful.spawn.with_shell("~/.config/awesome/autorun.sh")
 
 -- This is used later as the default terminal and editor to run.
-browser = "flatpak run com.brave.Browser"
+browser = "brave"
 terminal = "alacritty"
 editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
@@ -315,7 +315,7 @@ globalkeys = gears.table.join(
             elseif t.name == "2" then
 				awful.spawn(browser)
 			elseif t.name == "3" then
-				awful.spawn("flatpak run com.discordapp.Discord")
+				awful.spawn("discord")
 			elseif t.name == "4" then
 				awful.spawn("spotify")
             end
