@@ -38,4 +38,4 @@ vim.cmd('set noet')
 --vim.cmd('filetype plugin off')
 
 --telescope ignore target in rust
-require('telescope').setup{defaults = {file_ignore_patterns = {"target/*"}}}
+require('telescope').setup{defaults = {file_ignore_patterns = {"target/*", "build/*", "Cargo.lock"}}}

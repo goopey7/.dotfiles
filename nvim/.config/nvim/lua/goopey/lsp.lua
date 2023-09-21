@@ -46,6 +46,9 @@ require'lspconfig'.clangd.setup{
 	end,
 }
 
+--Cmake
+require'lspconfig'.cmake.setup{}
+
 --Lua
 require'lspconfig'.lua_ls.setup {
 	on_attach = function ()

@@ -60,11 +60,12 @@ local function code_keymap()
 			--cmake
 			vim.keymap.set("n", "<leader>q", "<cmd>CMakeGenerate build -DCMAKE_EXPORT_COMPILE_COMMANDS=ON<CR>",opts)
 			vim.keymap.set("n", "<leader>x", "<cmd>CMakeBuild<CR>",opts)
+			vim.keymap.set("n", "<leader>X", "<cmd>terminal ./build/goop<CR>",opts)
 			vim.keymap.set("n", "<leader>z", "<cmd>CMakeClose<CR>",opts)
 
 			elseif ft == "rust" then
-			vim.keymap.set("n", "<leader>x", "<cmd>CargoBuild<CR>",opts)
-			vim.keymap.set("n", "<leader>X", "<cmd>CargoRun<CR>",opts)
+			--vim.keymap.set("n", "<leader>x", "<cmd>CargoBuild<CR>",opts)
+			--vim.keymap.set("n", "<leader>X", "<cmd>CargoRun<CR>",opts)
 			end
 
 			--debugging
