@@ -58,7 +58,8 @@ local function code_keymap()
 			vim.keymap.set("n", "<leader>n", "<cmd>A<CR>",opts)
 
 			--cmake
-			vim.keymap.set("n", "<leader>q", "<cmd>CMakeGenerate build -DCMAKE_EXPORT_COMPILE_COMMANDS=ON<CR>",opts)
+			vim.keymap.set("n", "<leader>q", "<cmd>CMakeGenerate build -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=ON<CR>",opts)
+			vim.keymap.set("n", "<leader>Q", "<cmd>CMakeGenerate build -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXPORT_COMPILE_COMMANDS=ON<CR>",opts)
 			vim.keymap.set("n", "<leader>x", "<cmd>CMakeBuild<CR>",opts)
 			vim.keymap.set("n", "<leader>X", "<cmd>terminal ./build/goop<CR>",opts)
 			vim.keymap.set("n", "<leader>z", "<cmd>CMakeClose<CR>",opts)
