@@ -40,6 +40,7 @@ require'lspconfig'.clangd.setup{
 		"clangd",
 		"--background-index",
 		"--suggest-missing-includes",
+		"--offset-encoding=utf-16",
 	},
 	on_attach = function()
 		default_bindings()
@@ -122,3 +123,6 @@ cmp.setup.filetype('gitcommit', {
   })
 })
 
+
+local cfg = {}  -- add your config here
+require "lsp_signature".setup(cfg)

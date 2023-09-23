@@ -108,4 +108,6 @@ return require('packer').startup(function ()
 
 	use 'tikhomirov/vim-glsl'
 
+	use 'ray-x/lsp_signature.nvim'
+
 end)
