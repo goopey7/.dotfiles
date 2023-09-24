@@ -1,107 +1,106 @@
-return require('packer').startup(function ()
-
-    -- packer manages itself
-    use 'wbthomason/packer.nvim'
+return require('packer').startup(function()
+	-- packer manages itself
+	use 'wbthomason/packer.nvim'
 
 	-- colorscheme
-    --use 'rafi/awesome-vim-colorschemes'
-    use 'scrooloose/NERDTree'
+	--use 'rafi/awesome-vim-colorschemes'
+	use 'scrooloose/NERDTree'
 
-    --Status Bar at the bottom
-    use 'vim-airline/vim-airline'
-    use 'vim-airline/vim-airline-themes'
+	--Status Bar at the bottom
+	use 'vim-airline/vim-airline'
+	use 'vim-airline/vim-airline-themes'
 
-    --Dev Icons
-    use 'ryanoasis/vim-devicons'
+	--Dev Icons
+	use 'ryanoasis/vim-devicons'
 
-    --Provide preview of color codes
-    use 'ap/vim-css-color'
+	--Provide preview of color codes
+	use 'ap/vim-css-color'
 
-    --Fuzzy finder
-    use 'nvim-lua/plenary.nvim'
-    use 'nvim-treesitter/nvim-treesitter'
-    use 'nvim-telescope/telescope.nvim'
+	--Fuzzy finder
+	use 'nvim-lua/plenary.nvim'
+	use 'nvim-treesitter/nvim-treesitter'
+	use 'nvim-telescope/telescope.nvim'
 
-    --Nice tab bar
-    use 'kyazdani42/nvim-web-devicons'
-    use {
-  'kdheepak/tabline.nvim',
-  config = function()
-    require'tabline'.setup {
-      -- Defaults configuration options
-      enable = true,
-      options = {
-      -- If lualine is installed tabline will use separators configured in lualine by default.
-      -- These options can be used to override those settings.
-        max_bufferline_percent = 66, -- set to nil by default, and it uses vim.o.columns * 2/3
-        show_tabs_always = false, -- this shows tabs only when there are more than one tab or if the first tab is named
-        show_devicons = true, -- this shows devicons in buffer section
-        show_bufnr = false, -- this appends [bufnr] to buffer section,
-        show_filename_only = true, -- shows base filename only instead of relative path in filename
-        modified_icon = "+ ", -- change the default modified icon
-        modified_italic = false, -- set to true by default; this determines whether the filename turns italic if modified
-        show_tabs_only = false, -- this shows only tabs instead of tabs + buffers
-      }
-    }
-    vim.cmd[[
+	--Nice tab bar
+	use 'kyazdani42/nvim-web-devicons'
+	use {
+		'kdheepak/tabline.nvim',
+		config = function()
+			require 'tabline'.setup {
+				-- Defaults configuration options
+				enable = true,
+				options = {
+					-- If lualine is installed tabline will use separators configured in lualine by default.
+					-- These options can be used to override those settings.
+					max_bufferline_percent = 66, -- set to nil by default, and it uses vim.o.columns * 2/3
+					show_tabs_always = false, -- this shows tabs only when there are more than one tab or if the first tab is named
+					show_devicons = true, -- this shows devicons in buffer section
+					show_bufnr = false, -- this appends [bufnr] to buffer section,
+					show_filename_only = true, -- shows base filename only instead of relative path in filename
+					modified_icon = "+ ", -- change the default modified icon
+					modified_italic = false, -- set to true by default; this determines whether the filename turns italic if modified
+					show_tabs_only = false, -- this shows only tabs instead of tabs + buffers
+				}
+			}
+			vim.cmd [[
       set guioptions-=e " Use showtabline in gui vim
       set sessionoptions+=tabpages,globals " store tabpages and globals in session
     ]]
-  end,
-  requires = { { 'hoob3rt/lualine.nvim', opt=true }, {'kyazdani42/nvim-web-devicons', opt = true} }
-}
+		end,
+		requires = { { 'hoob3rt/lualine.nvim', opt = true }, { 'kyazdani42/nvim-web-devicons', opt = true } }
+	}
 
-    --Cmake integration
-    use 'cdelledonne/vim-cmake'
+	--Cmake integration
+	use 'cdelledonne/vim-cmake'
 
-    --Auto define cpp
-    use 'tenfyzhong/vim-gencode-cpp'
+	--Auto define cpp
+	use 'tenfyzhong/vim-gencode-cpp'
 
 	--:AV
 	use 'goopey7/a.vim'
 
-    --LazyGit
-    use 'kdheepak/lazygit.nvim'
-    use 'drichardson/vim-unreal'
+	--LazyGit
+	use 'kdheepak/lazygit.nvim'
+	use 'drichardson/vim-unreal'
 
-    --debugging
-    use 'mfussenegger/nvim-dap'
-    use 'rcarriga/nvim-dap-ui'
-    use 'theHamsta/nvim-dap-virtual-text'
-    use 'nvim-telescope/telescope-dap.nvim'
-    use 'svermeulen/vimpeccable'
+	--debugging
+	use 'mfussenegger/nvim-dap'
+	use 'rcarriga/nvim-dap-ui'
+	use 'theHamsta/nvim-dap-virtual-text'
+	use 'nvim-telescope/telescope-dap.nvim'
+	use 'svermeulen/vimpeccable'
 
-    -- COC
-    --use {'neoclide/coc.nvim', branch='release'}
+	-- COC
+	--use {'neoclide/coc.nvim', branch='release'}
 
-    -- Neoterm
-    use 'kassio/neoterm'
+	-- Neoterm
+	use 'kassio/neoterm'
 
-    -- Omnisharp
-    use 'OmniSharp/omnisharp-vim'
+	-- Omnisharp
+	use 'OmniSharp/omnisharp-vim'
 
-    --Rust
-    use 'goopey7/vim-cargo'
+	--Rust
+	use 'goopey7/vim-cargo'
 
-    --Copilot
+	--Copilot
 	use "zbirenbaum/copilot.lua"
 
 	--LSP
 	use 'neovim/nvim-lspconfig'
 
-    --Completion
+	--Completion
 	use 'hrsh7th/nvim-cmp'
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/cmp-buffer'
 	use 'hrsh7th/cmp-path'
-    use 'L3MON4D3/LuaSnip'
-    use 'saadparwaiz1/cmp_luasnip'
+	use 'L3MON4D3/LuaSnip'
+	use 'saadparwaiz1/cmp_luasnip'
 
-    --copilot
-    use 'github/copilot.vim'
+	--copilot
+	use 'github/copilot.vim'
 
-    --wakatime
-    use 'wakatime/vim-wakatime'
+	--wakatime
+	use 'wakatime/vim-wakatime'
 
 	--gruvbox
 	use 'morhetz/gruvbox'
@@ -109,5 +108,4 @@ return require('packer').startup(function ()
 	use 'tikhomirov/vim-glsl'
 
 	use 'ray-x/lsp_signature.nvim'
-
 end)

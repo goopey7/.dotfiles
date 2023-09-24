@@ -44,7 +44,7 @@ local function code_keymap()
 			local ft = vim.api.nvim_buf_get_option(bufnr, "filetype")
 			local fname = vim.fn.expand "%:p:t"
 
-			if ft == "cpp" then
+			if ft == "cpp" or ft == "glsl" then
 			--cpp class generation
 			vim.cmd('source ' .. vim.fn.stdpath('config') .. '/cppClass.vim')
 			vim.keymap.set("n", "<leader>c", ":Class ",{noremap=true})
