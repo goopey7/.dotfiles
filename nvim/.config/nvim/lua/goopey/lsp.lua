@@ -84,11 +84,26 @@ require 'lspconfig'.lua_ls.setup {
 	},
 }
 
+--Markdown
+require 'lspconfig'.marksman.setup {
+	on_attach = function()
+		default_bindings()
+	end
+}
+
+
 --TS/JS
 require 'lspconfig'.tsserver.setup {
 	on_attach = function()
 		default_bindings()
 		require("lsp_signature").on_attach({ hi_parameter = "LspSignatureActiveParameter" }, bufnr)
+	end
+}
+
+--Yaml
+require 'lspconfig'.yamlls.setup {
+	on_attach = function()
+		default_bindings()
 	end
 }
 
