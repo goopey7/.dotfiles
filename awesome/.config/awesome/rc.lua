@@ -154,7 +154,9 @@ local function set_wallpaper(s)
 		if type(wallpaper) == "function" then
 			wallpaper = wallpaper(s)
 		end
-		gears.wallpaper.maximized(wallpaper, s, true)
+		--gears.wallpaper.maximized(wallpaper, s, true)
+		-- Use feh to set the wallpaper with your desired mode
+        awful.spawn.with_shell("feh --bg-fill " .. wallpaper)
 	end
 end
 
