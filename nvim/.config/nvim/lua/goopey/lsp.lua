@@ -107,6 +107,11 @@ require 'lspconfig'.yamlls.setup {
 	end
 }
 
+--OCaml
+require 'lspconfig'.ocamllsp.setup {
+}
+
+
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
 -- Set up nvim-cmp.
