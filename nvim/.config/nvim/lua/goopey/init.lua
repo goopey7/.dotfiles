@@ -38,5 +38,5 @@ vim.cmd('set noet')
 --vim.cmd('filetype plugin off')
 
 --telescope
-require('telescope').setup{defaults = {file_ignore_patterns = {"target/*", "build/*", "Cargo.lock", "shaders/*.*.spv", "notes/*"}}}
+require('telescope').setup{defaults = {file_ignore_patterns = {"target/*", "build/*", "Cargo.lock", "shaders/*.*.spv", "notes/*", "libs/*"}}}
 
