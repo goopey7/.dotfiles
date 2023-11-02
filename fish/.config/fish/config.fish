@@ -6,7 +6,7 @@ end
 source /home/sam/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
 
 function ue
-	$HOME/src/uegen.sh $argv
+	$HOME/.config/fish/uegen.sh $argv
 end
 
 alias ue4 'echo Please use ue instead.'
