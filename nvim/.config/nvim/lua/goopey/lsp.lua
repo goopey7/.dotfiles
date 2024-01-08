@@ -17,6 +17,16 @@ local default_bindings = function()
 	vim.keymap.set('n', '<leader>rf', "<cmd>Telescope lsp_references<cr>", { buffer = 0 })
 end
 
+--D bindings
+require 'lspconfig'.serve_d.setup {
+	capabilities = capabilities,
+	on_attach = function(client, bufnr)
+		default_bindings()
+		require("lsp_signature").on_attach(nil, bufnr)
+	end,
+}
+
+
 --Rust bindings
 require 'lspconfig'.rust_analyzer.setup {
 	capabilities = capabilities,
@@ -146,3 +156,4 @@ cmp.setup.filetype('gitcommit', {
 		{ name = 'buffer' },
 	})
 })
+
