@@ -17,6 +17,15 @@ local default_bindings = function()
 	vim.keymap.set('n', '<leader>rf', "<cmd>Telescope lsp_references<cr>", { buffer = 0 })
 end
 
+--C# bindings
+require'lspconfig'.csharp_ls.setup{
+	capabilities = capabilities,
+	on_attach = function(client, bufnr)
+		default_bindings()
+		require("lsp_signature").on_attach({ hi_parameter = "LspSignatureActiveParameter" }, bufnr)
+	end,
+}
+
 --D bindings
 require 'lspconfig'.serve_d.setup {
 	capabilities = capabilities,
@@ -119,6 +128,13 @@ require 'lspconfig'.yamlls.setup {
 
 --OCaml
 require 'lspconfig'.ocamllsp.setup {
+}
+
+--R
+require 'lspconfig'.r_language_server.setup {
+	on_attach = function()
+		default_bindings()
+	end
 }
 
 

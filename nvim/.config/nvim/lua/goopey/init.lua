@@ -28,15 +28,26 @@ vim.cmd('colorscheme gruvbox')
 
 --eliminate auto comments on next line
 vim.api.nvim_create_autocmd("BufEnter", { callback = function() vim.opt.expandtab = false end, })
-vim.api.nvim_create_autocmd("BufEnter", { callback = function() vim.opt.formatoptions = vim.opt.formatoptions - { "c","r","o" } end, })
+vim.api.nvim_create_autocmd("BufEnter",
+	{ callback = function() vim.opt.formatoptions = vim.opt.formatoptions - { "c", "r", "o" } end, })
 
 vim.cmd('set noexpandtab')
-vim.bo.expandtab = false;
-vim.o.expandtab = false;
-vim.opt.expandtab = false;
+vim.bo.expandtab = false
+vim.o.expandtab = false
+vim.opt.expandtab = false
 vim.cmd('set noet')
 --vim.cmd('filetype plugin off')
 
 --telescope
-require('telescope').setup{defaults = {file_ignore_patterns = {"target/*", "build/*", "Cargo.lock", "shaders/*.*.spv", "notes/*", "libs/*", "res/*"}}}
+require('telescope').setup { defaults = { file_ignore_patterns = { "target/*", "build/*", "Cargo.lock", "shaders/*.*.spv", "notes/*", "libs/*", "res/*", "Content/*" , "MessageEditor.exe*"} } }
 
+--unreal engine
+UNREAL_LOADED = false
+local function on_project_loaded(projectPath, projectName)
+	UNREAL_LOADED = true
+	print("Unreal Engine project found: " .. projectName)
+	vim.keymap.set("n", "<leader>x", "<cmd>UnrealBuildEditor<CR>", opts)
+	vim.keymap.set("n", "<leader>q", "<cmd>UnrealGen<CR>", opts)
+end
+
+require('unreal-support').setup({ engine_path = "/home/sam/src/UnrealEngine", on_project_loaded = on_project_loaded })
