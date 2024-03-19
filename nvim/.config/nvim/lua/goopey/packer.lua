@@ -34,7 +34,6 @@ return require('packer').startup(function()
 
 	--LazyGit
 	use 'kdheepak/lazygit.nvim'
-	use 'drichardson/vim-unreal'
 
 	--debugging
 	use 'mfussenegger/nvim-dap'
@@ -49,14 +48,8 @@ return require('packer').startup(function()
 	-- Neoterm
 	use 'kassio/neoterm'
 
-	-- Omnisharp
-	use 'OmniSharp/omnisharp-vim'
-
 	--Rust
 	use 'goopey7/vim-cargo'
-
-	--Copilot
-	use "zbirenbaum/copilot.lua"
 
 	--LSP
 	use 'neovim/nvim-lspconfig'
@@ -69,9 +62,6 @@ return require('packer').startup(function()
 	use 'L3MON4D3/LuaSnip'
 	use 'saadparwaiz1/cmp_luasnip'
 
-	--copilot
-	use 'github/copilot.vim'
-
 	--wakatime
 	use 'wakatime/vim-wakatime'
 
@@ -82,5 +72,7 @@ return require('packer').startup(function()
 
 	use 'ray-x/lsp_signature.nvim'
 
-	use 'goopey7/Unreal.nvim'
+	use '~/src/unreal-support.nvim'
+
+	use 'nvim-treesitter/nvim-treesitter'
 end)

@@ -1,4 +1,4 @@
-function c --wraps='cd ~/src/goop && clear' --description 'alias c=cd ~/src/goop && clear'
-  cd ~/src/goop && clear $argv
+function c --wraps='cd ~/src/goop && clear' --wraps='cd ~/src/unreal/BadTiming && clear' --description 'alias c=cd ~/src/unreal/BadTiming && clear'
+  cd ~/src/unreal/BadTiming && clear $argv
         
 end
