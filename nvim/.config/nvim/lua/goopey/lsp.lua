@@ -45,6 +45,15 @@ require 'lspconfig'.rust_analyzer.setup {
 	end,
 }
 
+--Python bindings
+require 'lspconfig'.basedpyright.setup {
+	capabilities = capabilities,
+	on_attach = function()
+		default_bindings()
+		require("lsp_signature").on_attach({ hi_parameter = "LspSignatureActiveParameter" }, bufnr)
+	end,
+}
+
 --Dart bindings
 require 'lspconfig'.dartls.setup {
 	capabilities = capabilities,
