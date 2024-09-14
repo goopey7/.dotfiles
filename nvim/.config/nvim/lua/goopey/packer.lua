@@ -72,7 +72,20 @@ return require('packer').startup(function()
 
 	use 'ray-x/lsp_signature.nvim'
 
-	use '~/src/unreal-support.nvim'
+	use 'goopey7/unreal-support.nvim'
 
 	use 'nvim-treesitter/nvim-treesitter'
+
+	use 'nvim-neotest/nvim-nio'
+
+	use {
+	  "ahmedkhalf/project.nvim",
+	  config = function()
+		require("project_nvim").setup {
+		  -- your configuration comes here
+		  -- or leave it empty to use the default settings
+		  -- refer to the configuration section below
+		}
+	  end
+	}
 end)
