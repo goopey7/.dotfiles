@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 return {
 	color_scheme = "Gruvbox dark, hard (base16)",
 	window_decorations = "NONE",
-	font = wezterm.font("Source Code Pro"),
+	font = wezterm.font("SauceCodePro Nerd Font"),
 	font_size = 18,
 	leader = { key = "b", mods = "CTRL" },
 	hide_tab_bar_if_only_one_tab = true,
