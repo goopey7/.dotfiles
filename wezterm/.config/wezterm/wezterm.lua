@@ -1,5 +1,5 @@
 local wezterm = require("wezterm")
-return {
+local config = {
 	color_scheme = "Gruvbox dark, hard (base16)",
 	window_decorations = "NONE",
 	font = wezterm.font("SauceCodePro Nerd Font"),
@@ -50,3 +50,9 @@ return {
 		{ key = "x", mods = "LEADER", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
 	},
 }
+
+if wezterm.target_triple == "x86_64-pc-windows-msvc" then
+	config.default_prog = { "powershell.exe" }
+end
+
+return config
