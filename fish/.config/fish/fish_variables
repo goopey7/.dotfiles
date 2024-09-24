@@ -1,5 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export CC:/usr/bin/clang
 SETUVAR --export CHROME_EXECUTABLE:brave
 SETUVAR --export EMSDK:/usr/lib/emscripten/
 SETUVAR --export VCPKG_ROOT:\x2e/vcpkg/
