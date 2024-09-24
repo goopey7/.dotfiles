@@ -11,3 +11,5 @@ end
 
 alias ue4 'echo Please use ue instead.'
 alias ue5 'echo Please use ue instead.'
+
+fzf --fish | source

@@ -1,6 +1,8 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export CHROME_EXECUTABLE:brave
+SETUVAR --export EMSDK:/usr/lib/emscripten/
+SETUVAR --export VCPKG_ROOT:\x2e/vcpkg/
 SETUVAR __fish_initialized:3400
 SETUVAR fish_color_autosuggestion:585858
 SETUVAR fish_color_cancel:\x2d\x2dreverse
@@ -42,4 +44,4 @@ SETUVAR fish_pager_color_selected_background:\x2d\x2dbackground\x3dbrblack
 SETUVAR fish_pager_color_selected_completion:\x1d
 SETUVAR fish_pager_color_selected_description:\x1d
 SETUVAR fish_pager_color_selected_prefix:\x1d
-SETUVAR fish_user_paths:/home/sam/\x2edotnet/tools\x1e/home/sam/\x2elocal/bin\x1e/opt/flutter/bin
+SETUVAR fish_user_paths:/usr/lib/emscripten\x1e/home/sam/src/harbor_client/vcpkg\x1e/home/sam/src/vcpkg\x1e/home/sam/\x2edotnet/tools\x1e/home/sam/\x2elocal/bin\x1e/opt/flutter/bin
