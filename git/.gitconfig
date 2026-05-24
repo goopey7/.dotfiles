@@ -1,15 +1,5 @@
 [user]
 	email = samcollier916@gmail.com
 	name = Sam Collier
-[color]
-	ui = auto
-[credential "https://github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential
-[filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
-[safe]
-	directory = /opt/flutter
+[init]
+	defaultBranch = main
