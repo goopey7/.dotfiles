@@ -56,8 +56,8 @@ beautiful.init("~/.config/awesome/default/theme.lua")
 awful.spawn.with_shell("~/.config/awesome/autorun.sh")
 
 -- This is used later as the default terminal and editor to run.
-browser = "brave"
-terminal = "wezterm"
+browser = "thorium-browser-avx2"
+terminal = "alacritty"
 editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -68,7 +68,7 @@ awful.spawn(terminal)
 -- If you do not like this or do not have such a key,
 -- I suggest you to remap Mod4 to another key using xmodmap or other tools.
 -- However, you can use another modifier like Mod1, but it may interact with others.
-modkey = "Mod4"
+modkey = "Mod1"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
