@@ -1,2 +1,2 @@
 #!/bin/bash
-stow -vSt ~ awesome git nvim alacritty tmux fish wezterm
+stow -vSt ~ awesome git nvim alacritty powershell
