@@ -1,2 +1,2 @@
 #!/bin/bash
-stow -vSt ~ awesome git nvim alacritty powershell
+stow -vSt ~ awesome git alacritty powershell
